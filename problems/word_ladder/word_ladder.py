@@ -1,5 +1,5 @@
 from collections import deque
-from src.graph import Graph
+from graphs.reference_solutions import UndirectedGraph
 
 def construct_word_ladder_graph(word_list):
     '''
@@ -8,7 +8,7 @@ def construct_word_ladder_graph(word_list):
     graph should have a single node for every word in the word list, and an edge that
     connects nodes if the two words are different by exactly one letter.
     '''
-    g = Graph()
+    g = UndirectedGraph()
     for w_idx, word in enumerate(word_list):
         for other in word_list[w_idx:]:
             assert len(word) == len(other)

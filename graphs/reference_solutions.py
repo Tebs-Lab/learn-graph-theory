@@ -3,7 +3,7 @@ from collections import namedtuple
 # Named tuple instead of class, for berveity
 Edge = namedtuple('Edge', ('from_name', 'to_name', 'weight'))
 
-class Graph:
+class UndirectedGraph:
     '''
     An undirected graph.
     '''

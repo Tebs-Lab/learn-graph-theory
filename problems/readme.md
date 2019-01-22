@@ -15,7 +15,7 @@ dot
 dog
 ```
 
-Three letter words are pretty easy, four letter words are harder. Can you create a ladder between ...
+Three letter words are pretty easy, four letter words are harder.
 
 Can you create an algorithm, using you graph library, that can determine if two words have a ladder; and if so return the series of words that makeup the word ladder, in order.
 

@@ -1,10 +1,10 @@
-from src.graph import Graph
+from graphs.reference_solutions import UndirectedGraph
 
 def test_create_graph_basic():
     '''
     test the basic creation api, along a happy path
     '''
-    g = Graph()
+    g = UndirectedGraph()
 
     assert g.add_node('a')
     assert g.add_node('b')
