@@ -1,4 +1,4 @@
-from problems.word_ladder import word_ladder as wl
+from problems.word_ladder import reference_implementation as wl
 
 def test_construct_word_ladder_graph():
     dictionary = [
@@ -23,7 +23,7 @@ def test_construct_word_ladder_graph():
     assert ('dog', 'dot', 1) in edges
 
 
-def test_shortest_path_bfs():
+def test_solve_word_ladder():
     dictionary = [
         'cat',
         'cot',
@@ -34,20 +34,19 @@ def test_shortest_path_bfs():
         'pop'
     ]
 
-    g = wl.construct_word_ladder_graph(dictionary)
-    sol = wl.shortest_path_bfs(g, 'cat', 'dog')
+    sol = wl.solve_word_ladder(dictionary, 'cat', 'dog')
     assert sol == ['cat', 'cot', 'dot', 'dog']
 
-    sol = wl.shortest_path_bfs(g, 'cat', 'pop')
+    sol = wl.solve_word_ladder(dictionary, 'cat', 'pop')
     assert sol == ['cat', 'cot', 'cop', 'pop']
 
-    sol = wl.shortest_path_bfs(g, 'cat', 'can')
+    sol = wl.solve_word_ladder(dictionary, 'cat', 'can')
     assert sol == ['cat', 'can']
 
-    sol = wl.shortest_path_bfs(g, 'cat', 'cat')
+    sol = wl.solve_word_ladder(dictionary, 'cat', 'cat')
     assert sol == ['cat']
 
-    sol = wl.shortest_path_bfs(g, 'cat', 'car') # Because car isn't in OUR dictionary, although it is a word
+    sol = wl.solve_word_ladder(dictionary, 'cat', 'car') # Because car isn't in OUR dictionary, although it is a word
     assert sol is None
 
 

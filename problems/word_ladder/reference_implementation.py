@@ -1,5 +1,5 @@
-from collections import deque
 from graphs.reference_solutions import UndirectedGraph
+from algorithms.search.reference_implementation import breadth_first_search
 
 def construct_word_ladder_graph(word_list):
     '''
@@ -25,43 +25,15 @@ def construct_word_ladder_graph(word_list):
     return g
 
 
-def shortest_path_bfs(g, start_name, stop_name):
+def solve_word_ladder(word_list, start_word, stop_word):
     '''
-    Given a graph g, and the identifiers for two of the nodes in the graph, start_name
-    and stop_name, using bfs determine if there is a path between the two nodes. If
-    there is a path return a list containing the names of the nodes that comprise the path
-    in the order that they will be reached from start to finish.
-
-    If there is no path, return None.
-
-    If the start_name is the stop_name, return [start_name]
+    Given a list of allowed words (word_list), a start_word, and a stop_node
+    determine if the words can be laddered. If so, return that ladder, if not
+    return None.
     '''
-    frontier = deque() # I'll use appendLeft and pop so this behaves as a queue
-    frontier.appendleft(start_name)
-
-    found = {} # I'll point node_name to parent_node_name, so that we can get the path later
-    found[start_name] = None
-
-    while len(frontier) > 0:
-        current_node = frontier.pop()
-
-        if current_node == stop_name:
-            # Backtrace to find the path
-            path = [stop_name]
-            while path[-1] != start_name:
-                path.append(found[path[-1]])
-            path.reverse()
-            return path
-
-        # BFS ignores edge weight
-        for neighbor, _ in g.neighbors(current_node):
-            # For BFS, the first time we encounter a neighbor will determine it's parent in the path
-            # This assumption will not be true in Dijkstra's algorithm though.
-            if neighbor not in found:
-                frontier.appendleft(neighbor)
-                found[neighbor] = current_node
-
-    return None
+    g = construct_word_ladder_graph(word_list)
+    ladder = breadth_first_search(g, start_word, stop_word)
+    return ladder
 
 
 def lazy_word_ladder(word_list, start_word, stop_word):

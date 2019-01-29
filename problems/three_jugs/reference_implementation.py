@@ -1,6 +1,7 @@
 from graphs.reference_solutions import DirectedGraph
+from algorithms.search.reference_implementation import breadth_first_search_by_criteria
 
-def build_three_jugs_graph():
+def construct_three_jugs_graph():
     '''
     This function constructs and returns a DirectedGraph representing the
     three jugs problem. Each node in the graph is represented by a 3-tuple
@@ -22,7 +23,6 @@ def build_three_jugs_graph():
 
     while len(frontier) > 0:
         current_state = frontier.pop()
-        print(current_state)
 
         if current_state in explored:
             continue
@@ -85,3 +85,15 @@ def build_three_jugs_graph():
         explored.add(current_state)
 
     return g
+
+
+def find_three_jugs_solution():
+    '''
+    Return a series of nodes that represents a solution to the three jugs problem.
+    Because we're not looking for one specific node, but any node where a
+    '''
+    g = construct_three_jugs_graph()
+    def stop_criteria(node):
+        return node[0] == 6 or node[1] == 6
+
+    return breadth_first_search_by_criteria(g, (12, 0, 0), stop_criteria)
