@@ -1,4 +1,4 @@
-from graphs.reference_solutions import DirectedGraph
+from graphs.reference_implementation import DirectedGraph
 from algorithms.search.reference_implementation import breadth_first_search_by_criteria
 
 def construct_three_jugs_graph():

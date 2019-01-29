@@ -1,4 +1,4 @@
-from graphs.reference_solutions import UndirectedGraph
+from graphs.reference_implementation import UndirectedGraph
 
 # TODO: Extend tests, add directed graphs and student implementations
 

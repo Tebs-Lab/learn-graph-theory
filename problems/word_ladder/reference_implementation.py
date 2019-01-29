@@ -1,4 +1,4 @@
-from graphs.reference_solutions import UndirectedGraph
+from graphs.reference_implementation import UndirectedGraph
 from algorithms.search.reference_implementation import breadth_first_search
 
 def construct_word_ladder_graph(word_list):
@@ -34,16 +34,3 @@ def solve_word_ladder(word_list, start_word, stop_word):
     g = construct_word_ladder_graph(word_list)
     ladder = breadth_first_search(g, start_word, stop_word)
     return ladder
-
-
-def lazy_word_ladder(word_list, start_word, stop_word):
-    '''
-    Given a word list, start_word, and stop_word, determine if word_lists contains
-    a ladder from start_word to stop_word. If it does, return the words in the ladder.
-    If it does not, return None. If the start_word is the stop_word, return [start_word]
-
-    This function should not build a graph from the entierty of word_list -- instead it
-    should explore words one at a time, therefore expanding the fewest possible number
-    of nodes between start_word and stop_word.
-    '''
-    pass
