@@ -5,6 +5,7 @@ from algorithms.search.reference_implementation import breadth_first_search_by_c
 def criterion(node):
     return node.upper() == 'E'
 
+
 def test_start_is_stop():
     g = DirectedGraph()
     g.add_edge('a', 'b')
