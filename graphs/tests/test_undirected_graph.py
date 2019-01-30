@@ -19,16 +19,16 @@ def test_add_nodes():
     g = UndirectedGraph()
     assert g.add_node('a')
     assert 'a' in g.nodes()
-    assert len(g.nodes()) == 1
+    assert len(list(g.nodes())) == 1
 
     assert g.add_node('a') == False
     assert 'a' in g.nodes()
-    assert len(g.nodes()) == 1
+    assert len(list(g.nodes())) == 1
 
     assert g.add_node('b')
     assert 'a' in g.nodes()
     assert 'b' in g.nodes()
-    assert len(g.nodes()) == 2
+    assert len(list(g.nodes())) == 2
 
 
 def test_add_edge_neighbors():
@@ -114,7 +114,7 @@ def test_add_edge_nodes():
     '''
     g = UndirectedGraph()
     assert g.add_edge('a', 'b', 42)
-    assert len(g.nodes()) == 2
+    assert len(list(g.nodes())) == 2
     assert 'a' in g.nodes()
     assert 'b' in g.nodes()
 
@@ -127,27 +127,27 @@ def test_simple_integration():
 
     assert g.add_node('a')
     assert g.contains('a')
-    assert len(g.nodes()) == 1
+    assert len(list(g.nodes())) == 1
     assert 'a' in g.nodes()
-    assert len(g.neighbors('a')) == 0
+    assert len(list(g.neighbors('a'))) == 0
 
     assert g.add_node('b')
     assert g.contains('b')
-    assert len(g.nodes()) == 2
+    assert len(list(g.nodes())) == 2
     assert 'a' in g.nodes()
     assert 'b' in g.nodes()
-    assert len(g.neighbors('a')) == 0
-    assert len(g.neighbors('b')) == 0
+    assert len(list(g.neighbors('a'))) == 0
+    assert len(list(g.neighbors('b'))) == 0
 
     assert g.add_node('c')
     assert g.contains('c')
-    assert len(g.nodes()) == 3
+    assert len(list(g.nodes())) == 3
     assert 'a' in g.nodes()
     assert 'b' in g.nodes()
     assert 'c' in g.nodes()
-    assert len(g.neighbors('a')) == 0
-    assert len(g.neighbors('b')) == 0
-    assert len(g.neighbors('c')) == 0
+    assert len(list(g.neighbors('a'))) == 0
+    assert len(list(g.neighbors('b'))) == 0
+    assert len(list(g.neighbors('c'))) == 0
 
     g.add_edge('a', 'b')
     edges = list(g.edges())
@@ -157,15 +157,15 @@ def test_simple_integration():
     assert g.contains('a')
     assert g.contains('b')
     assert g.contains('c')
-    assert len(g.nodes()) == 3
+    assert len(list(g.nodes())) == 3
     assert 'a' in g.nodes()
     assert 'b' in g.nodes()
     assert 'c' in g.nodes()
-    assert len(g.neighbors('a')) == 1
+    assert len(list(g.neighbors('a'))) == 1
     assert ('b', 1) in g.neighbors('a')
-    assert len(g.neighbors('b')) == 1
+    assert len(list(g.neighbors('b'))) == 1
     assert ('a', 1) in g.neighbors('b')
-    assert len(g.neighbors('c')) == 0
+    assert len(list(g.neighbors('c'))) == 0
 
     g.add_edge('a', 'c')
     edges = list(g.edges())
@@ -177,16 +177,16 @@ def test_simple_integration():
     assert g.contains('a')
     assert g.contains('b')
     assert g.contains('c')
-    assert len(g.nodes()) == 3
+    assert len(list(g.nodes())) == 3
     assert 'a' in g.nodes()
     assert 'b' in g.nodes()
     assert 'c' in g.nodes()
-    assert len(g.neighbors('a')) == 2
+    assert len(list(g.neighbors('a'))) == 2
     assert ('b', 1) in g.neighbors('a')
     assert ('c', 1) in g.neighbors('a')
-    assert len(g.neighbors('b')) == 1
+    assert len(list(g.neighbors('b'))) == 1
     assert ('a', 1) in g.neighbors('b')
-    assert len(g.neighbors('c')) == 1
+    assert len(list(g.neighbors('c'))) == 1
     assert ('a', 1) in g.neighbors('c')
 
     edges = list(g.edges())
