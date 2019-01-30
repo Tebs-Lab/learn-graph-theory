@@ -25,12 +25,11 @@ def construct_word_ladder_graph(word_list):
     return g
 
 
-def solve_word_ladder(word_list, start_word, stop_word):
+def solve_word_ladder(wl_graph, start_word, stop_word):
     '''
     Given a list of allowed words (word_list), a start_word, and a stop_node
     determine if the words can be laddered. If so, return that ladder, if not
     return None.
     '''
-    g = construct_word_ladder_graph(word_list)
-    ladder = breadth_first_search(g, start_word, stop_word)
+    ladder = breadth_first_search(wl_graph, start_word, stop_word)
     return ladder
