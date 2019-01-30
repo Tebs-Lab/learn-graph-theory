@@ -90,7 +90,6 @@ def construct_three_jugs_graph():
 def find_three_jugs_solution():
     '''
     Return a series of nodes that represents a solution to the three jugs problem.
-    Because we're not looking for one specific node, but any node where a
     '''
     g = construct_three_jugs_graph()
     def stop_criteria(node):
