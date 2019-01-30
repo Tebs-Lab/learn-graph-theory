@@ -35,6 +35,9 @@ class UndirectedGraph:
 
         If either of the names is not already a member of the graph, create
         that node and add it to the graph first.
+
+        If an edge already exists between these two nodes do not modify it,
+        and return False
         '''
         if self._adjacency_table.get(a_name) == None:
             self.add_node(a_name)
@@ -42,9 +45,14 @@ class UndirectedGraph:
         if self._adjacency_table.get(b_name) == None:
             self.add_node(b_name)
 
+        if (self._adjacency_table[a_name].get(b_name) != None or
+           self._adjacency_table[b_name].get(a_name)):
+            return False
+
         self._adjacency_table[a_name][b_name] = weight
         self._adjacency_table[b_name][a_name] = weight
 
+        return True
 
     def neighbors(self, from_name):
         '''
@@ -112,6 +120,10 @@ class DirectedGraph:
 
         If either of the names is not already a member of the graph, create
         that node and add it to the graph first.
+
+        If this edge already exists, do not overwrite it and return False
+
+        If an edge is created, return True
         '''
         if self._adjacency_table.get(a_name) == None:
             self.add_node(a_name)
@@ -119,7 +131,11 @@ class DirectedGraph:
         if self._adjacency_table.get(b_name) == None:
             self.add_node(b_name)
 
+        if self._adjacency_table[a_name].get(b_name) != None:
+            return False
+
         self._adjacency_table[a_name][b_name] = weight
+        return True
 
 
     def neighbors(self, from_name):
