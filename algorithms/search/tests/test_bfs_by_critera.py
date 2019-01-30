@@ -5,6 +5,16 @@ from algorithms.search.reference_implementation import breadth_first_search_by_c
 def criterion(node):
     return node.upper() == 'E'
 
+def test_start_is_stop():
+    g = DirectedGraph()
+    g.add_edge('a', 'b')
+    g.add_edge('b', 'c')
+    g.add_edge('b', 'd')
+    g.add_edge('e', 'f')
+
+    assert breadth_first_search_by_criteria(g, 'e', criterion) == ['e']
+
+
 def test_no_path_directed():
     '''
     Test BFS on a simple directed graph that contains a no cycles, and no path to the goal.
