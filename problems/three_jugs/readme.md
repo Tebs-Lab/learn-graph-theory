@@ -4,6 +4,4 @@ You have 3 containers of different sizes. One holds 12 liters, one holds 8 liter
 
 > This puzzle dates back to 1484 and a variant of it features in the plot of Die Hard 3.
 
-Students are challenged to implement two functions, `construct_three_jugs_graph` and `find_three_jugs_solution` neither of which accept any input. Constructing the three jugs graph will require students to wrestle with the rules of pouring water from jug to jug (without spilling any), as well as model this problem as a graph.
-
-Solving the puzzle will require students to apply search to the graph in order to find a series of actions that result in having 6 liters of water in any one jug.
+Your goal is to implement two functions, `construct_three_jugs_graph` and `find_three_jugs_solution` neither of which accept any input. Constructing the three jugs graph will require you to figure out the rules of pouring water from jug to jug (without spilling any), as well as model this problem as a graph. Finding a solution will require graph search. Good luck!

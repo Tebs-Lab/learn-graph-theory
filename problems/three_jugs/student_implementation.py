@@ -1,10 +1,10 @@
 # Feel free to define any helper functions, or import anything from this repo or
-# the standard library
+# the standard library. You will need a graph API.
 
 
 def construct_three_jugs_graph():
     '''
-    This function constructs and returns a DirectedGraph representing the
+    This function constructs and returns a graph representing the
     three jugs problem. Each node in the graph is represented by a 3-tuple
     where the three values represent the amount of water currently in each jug,
     (twelve_liter, eight_liter, five_liter).

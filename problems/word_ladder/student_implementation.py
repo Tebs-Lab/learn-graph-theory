@@ -1,5 +1,6 @@
-from graphs.reference_implementation import UndirectedGraph
-from algorithms.search.reference_implementation import breadth_first_search
+# Feel free to define any helper functions, or import anything from this repo or
+# the standard library. You will need a graph API.
+
 
 def construct_word_ladder_graph(word_list):
     '''

@@ -1,4 +1,6 @@
-# Feel free to implement any helper functions, or import anything from the standard library
+# Feel free to define any helper functions, or import anything from this repo or
+# the standard library. The parameter g will always be a graph, your algorithms
+# should work for both DriectedGraphs and UndirectedGraphs.
 
 def breadth_first_search(g, start_node, stop_node):
     '''
