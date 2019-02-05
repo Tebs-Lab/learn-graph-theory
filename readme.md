@@ -1,6 +1,6 @@
 # Graph Theory Fundamentals Reference
 
-This repository is associated with the [graph theory fundamentals series](). Everything in this repository has been released to the public domain without liability — you are free to copy, alter, remix, redistribute, and extend these materials for any purpose whatsoever.  These educational materials have been built to serve three purposes:
+This repository is associated with the [graph theory fundamentals series](https://medium.com/@TebbaVonMathenstien/introduction-to-graph-theory-956929dcda50). Everything in this repository has been released to the public domain without liability — you are free to copy, alter, remix, redistribute, and extend these materials for any purpose whatsoever.  These educational materials have been built to serve three purposes:
 
 1. Provide clear, understandable, reference implementations of graph theory concepts and algorithms targeted at people learning these concepts for the first time.
 1. Create opportunities for learners to practice implementing important graph theory concepts and algorithms.
